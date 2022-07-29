@@ -1,3 +1,7 @@
+dnl WikiGen
+
+dnl HEADER -- generate the page header
+dnl usage: HEADER(title)
 define(`HEADER', `
 <!DOCTYPE html>
 <html>
@@ -15,14 +19,31 @@ define(`HEADER', `
 		</navbar>
 ')
 
+dnl FOOTER -- place the page footer and close the document
+dnl usage: FOOTER(text)
+define(`FOOTER', `
+		<footer>$1</footer>
+	</body>
+</html>
+')
+
+dnl SECTION -- insert a text section
+dnl usage: SECTION(text)
+dnl (newlines are allowed)
 define(`SECTION', `
 		<textsection>
         $1
 		</textsection>
 ')
 
-define(`FOOTER', `
-		<footer>$1</footer>
-	</body>
-</html>
+dnl BOLD -- make text bold
+dnl usage: BOLD(text)
+define(`BOLD', `
+<b>$1</b>
+')
+
+dnl LINK -- insert a link
+dnl usage: LINK(name, target)
+define(`LINK', `
+<a href="$2">$1</a>
 ')
