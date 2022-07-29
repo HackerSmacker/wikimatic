@@ -1,0 +1,7 @@
+include(macros.m4)
+
+HEADER(`test page')
+
+SECTION(`This is a test section. Wow!')
+
+FOOTER(`goodbye')
