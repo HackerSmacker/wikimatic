@@ -1,0 +1,13 @@
+WIKIMATIC SYSTEM
+
+This is a m4 macro templater system that generates wikis as static sites. 
+It is relatively simple to use, but, there's a few things that I need to 
+work out before it's ready for primetime. There's no gradients or other such 
+effects, so, it should (in theory) display on any browser ever. Since very old 
+browsers don't properly display background colors, this may or may not look 
+good on Netscape 3.0. For examples, just look at any of the .doc files. This
+is essentially a custom document processing language that gets interpreted by
+m4 and cranks out HTML files (with a singular dependency -- the stylesheet).
+Images can be stored in-place or on an external CDN (as with any static site).
+
+
