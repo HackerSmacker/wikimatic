@@ -4,3 +4,7 @@ Design guidelinks for WikiMatic
 2. The end user has to be able to make good-looking pages.
 3. No active content at all... who needs it?
 4. Be easy to use. There's no sense to not be able to make this easy; after all, easy and good can exist together!
+
+The goals of this project are:
+1. To be simple to use
+2. To not produce crazy documents that are full of unnecessary stuff

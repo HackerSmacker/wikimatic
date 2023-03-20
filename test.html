@@ -1,7 +1,41 @@
-include(macros.m4)
-HEADER({Setting up NJE on VSE})
 
-SECTION({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="style.css">
+	<title>WikiMatic - Setting up NJE on VSE</title>
+	</head>
+	<body>
+		<header><h1>Setting up NJE on VSE</h1></header>
+
+		<navbar>
+			<center><navboxtitle>Navigation</navboxtitle></center>
+			<navlink><a href="menu.html">Main menu</a></navlink><br>
+			<navlink><a href="index.cgi">Option 2</a></navlink><br>
+		</navbar>
+
+
+
+		<textsection>
+        
 This guide is going to cover setting up NJE networking on VSE.<br>
 It's relatively simple to do, but, there are a few gotchas that you
 might encounter. <br><br>
@@ -9,7 +43,10 @@ The first thing we need to do is regenerate the POWER load phase to allow for
 PNET networking to exist. To do this, go to ICCF library 59 and copy SKPWRNDT. 
 Change the phase name to PNETNDT, and define any nodes you may want to have. 
 Example:
-})
+
+		</textsection>
+        <br>
+
 
 <code>
  ===> 
@@ -32,13 +69,18 @@ Example:
  ***** END OF FILE *****                                                  *****
 </code>
 
-SECTION({
+
+		<textsection>
+        
 Now that you've done that, submit that job and invoke DITTO. Copy
 PNETNDT.PHASE from PRD2.CONFIG to IJSYSRS.SYSLIB, or change the CATALOG line
 in the job. Do note that this is somewhat risky (cataloguing directly into the
 system library)! Next, copy the SKPWRGEN sample from ICCF library 59, and, 
 edit to to tell it that PNET works and exists, like so:
-})
+
+		</textsection>
+        <br>
+
 
 <code>
  ===>
@@ -89,32 +131,51 @@ edit to to tell it that PNET works and exists, like so:
  ***** END OF FILE *****                                                  *****
 </code>
 
-SECTION({
+
+		<textsection>
+        
 Once you've done this, submit the job and re-invoke DITTO (or use LIBR) to copy
 the IPWPOWER.PHASE load module into IJSYSRS.SYSLIB from PRD2.CONFIG. Now, go
 to the Hardware Configuration and IPL screen and enter E20 as a CTCA. Next, 
 re-IPL. Once you have loaded the system back up, enter this to start networking:
-})
+
+		</textsection>
+        <br>
+
 
 <code>
 S PNET,VMESA,,E20
 </code>
-SECTION({
+
+		<textsection>
+        
 This will instruct POWER to attempt to start a NJE connection to the node named
 VMESA over the line with the address E20. Since this is a VM system that this
 example VSE system is running under, you may want to enter these RSCS commands
 to start NJE on that end (run these as RSCS)
-})
+
+		</textsection>
+        <br>
+
 <code>
 CP DEFINE CTCA 20
 CP COUPLE 20 VSE E20
 RSCS DEFINE VSEOLD TYPE NJE LINE 20 NODE VSEOLD
 RSCS START VSEOLD
 </code>
-SECTION({
+
+		<textsection>
+        
 Once you've done that, you should see the sign-on message, and, everything
 should be functional.
-})
+
+		</textsection>
+        <br>
 
 
-FOOTER({Date of revision: 3-20-23})
+
+
+		<footer>Date of revision: 3-20-23</footer>
+	</body>
+</html>
+
